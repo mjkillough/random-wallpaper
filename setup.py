@@ -15,7 +15,7 @@ setup(
     license=['MIT'],
     install_requires=[
         'requests',
-        'xdg'
+        'pyxdg'
     ],
 
     py_modules=['random_wallpaper'],

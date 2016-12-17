@@ -6,23 +6,16 @@ import os
 import random
 import tempfile
 
-import xdg
+import xdg.BaseDirectory
 import requests
 
 
 WALLPAPER_URL = 'https://source.unsplash.com/random/2560x1600'
-WALLPAPER_DIRECTORY = os.path.join(xdg.XDG_DATA_HOME, 'random-wallpapers')
+WALLPAPER_DIRECTORY = xdg.BaseDirectory.save_cache_path('random-wallpaper')
 
 ACTION_DOWNLOAD = 'download'
 ACTION_GET = 'get'
 
-
-def ensure_directory_exists():
-    if os.path.exists(WALLPAPER_DIRECTORY):
-        if not os.path.isdir(WALLPAPER_DIRECTORY):
-            raise Exception('Expected %s to be a directory' % directory)
-        return
-    os.makedirs(WALLPAPER_DIRECTORY)
 
 
 def download():
@@ -50,8 +43,11 @@ def main():
 
     args = parser.parse_args()
 
-    ensure_directory_exists()
     if args.action == ACTION_DOWNLOAD:
         download()
     else:
         print(get())
+
+
+if __name__ == '__main__':
+    main()

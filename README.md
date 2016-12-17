@@ -53,6 +53,7 @@ python setup.py develop
 
 and then run `random-wallpaper` to test your changes.
 
+
 ## Tests
 
 None. Sorry, the script works for me and I haven't had a need to tweak it. If I'm bored I'll come back and add some.
