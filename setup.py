@@ -7,7 +7,7 @@ from setuptools import setup
 setup(
     name='random-wallpaper',
     description='Script to maintain a collection of random wallpapers.',
-    version='1.0',
+    version='1.2',
     author='Michael Killough',
     author_email='michaeljkillough@gmail.com',
     url='https://github.com/mjkillough/random-wallpaper',
